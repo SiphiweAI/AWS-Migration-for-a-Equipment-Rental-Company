@@ -19,19 +19,6 @@ Synapse Analytics	Amazon Redshift	Data warehousing & analytics
 Azure DevOps	GitHub Actions / CodePipeline	CI/CD pipelines
 Azure Backup	AWS Backup	Data backup & resilience
 Azure Monitor	Amazon CloudWatch	Observability & monitoring
-## Project Structure
-
-├── main.tf                  # Root Terraform composition
-├── variables.tf             # Root-level variables
-├── outputs.tf               # Key outputs
-├── terraform.tfvars         # Environment-specific values
-├── modules/                 # Reusable Terraform modules
-│   ├── compute/             # ECS cluster & ALB
-│   ├── storage/             # S3 buckets
-│   ├── database/            # RDS instance
-│   ├── auth/                # Cognito user pools (B2C equivalent)
-│   └── edge/                # CloudFront + WAF for global access
-└── .github/workflows/       # CI/CD GitHub Actions
 
 ## Prerequisites
 
