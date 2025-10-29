@@ -20,7 +20,7 @@ Azure DevOps	GitHub Actions / CodePipeline	CI/CD pipelines
 Azure Backup	AWS Backup	Data backup & resilience
 Azure Monitor	Amazon CloudWatch	Observability & monitoring
 ## Project Structure
-.
+
 ├── main.tf                  # Root Terraform composition
 ├── variables.tf             # Root-level variables
 ├── outputs.tf               # Key outputs
