@@ -1,0 +1,67 @@
+# ==============================
+# Project & Environment
+# ==============================
+project_name = "equipment-rental"
+environment  = "prod"
+region       = "af-south-1"
+
+# ==============================
+# Tags
+# ==============================
+tags = {
+  Project     = "EquipmentRental"
+  Environment = "Production"
+  Owner       = "Ops Team"
+}
+
+# ==============================
+# Database (RDS)
+# ==============================
+db_instance_identifier = "equipment-rental-db"
+db_name                = "equipmentdb"
+db_username            = "admin"
+db_password            = "${var.db_password}"    # Set in local terraform.tfvars or environment variable
+db_instance_class      = "db.t3.medium"
+db_allocated_storage   = 20
+
+# ==============================
+# S3 Storage
+# ==============================
+s3_bucket_documents    = "equipment-rental-documents-prod"
+s3_bucket_images       = "equipment-rental-images-prod"
+
+# ==============================
+# ECS / Compute
+# ==============================
+ecs_cluster_name       = "equipment-rental-cluster"
+ecs_service_name       = "equipment-rental-service"
+ecs_task_cpu           = 512
+ecs_task_memory        = 1024
+ecs_desired_count      = 2
+ecs_container_image    = "YOUR_ECR_IMAGE_URI_HERE"   # e.g., 123456789012.dkr.ecr.af-south-1.amazonaws.com/equipment-rental:latest
+
+# ==============================
+# Cognito / Auth
+# ==============================
+cognito_user_pool_name       = "equipment-rental-users-prod"
+cognito_app_client_name      = "equipment-rental-app-client"
+cognito_callback_urls        = ["https://your-app-domain.com/callback"]
+cognito_logout_urls          = ["https://your-app-domain.com/logout"]
+
+# ==============================
+# CloudFront / Edge
+# ==============================
+cloudfront_origin_domain     = "YOUR_ALB_ORIGIN_DOMAIN_HERE"  # e.g., ALB DNS or S3 static site
+
+# ==============================
+# Lambda / Functions (optional)
+# ==============================
+lambda_function_names        = ["equipment-rental-booking", "equipment-rental-invoice"]
+
+# ==============================
+# Optional / Secrets
+# ==============================
+# API keys, SMTP passwords, and other secrets should be stored in AWS Secrets Manager or set via environment variables.
+# Example:
+# api_key = "${var.api_key}"
+# smtp_password = "${var.smtp_password}"
